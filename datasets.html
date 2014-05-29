@@ -1,0 +1,15 @@
+---
+layout: default
+title: Datasets
+permalink: "/datasets/"
+sort_order: 3
+---
+
+<h1>Suggested Datasets</h1>
+
+<ul>
+
+{% for dataset in site.data.datasets| jsonify | sort:'name' %}
+    <li><a href="{{ dataset.url }}" title="{{ dataset.name }}">{{ dataset.name }}</a></li>
+{% endfor %}
+</ul>

@@ -1,0 +1,18 @@
+{
+    "default": {
+        "bucket":       "2014.hackanooga.com",
+        "local_path":   "_site",
+        "exclude":      ["less", "sass", ".scss"],
+        "gzip":         true,
+        "charset":		"utf-8",
+        "cache":		{
+        	"text/css":					2592000,
+        	"application/javascript": 	2592000,
+        	"image/png":				22896000,
+        	"image/jpeg":				22896000,
+        	"image/webp":				22896000,
+        	"image/gif":				22896000,
+            "image/svg+xml":            22896000
+        } 
+    }
+}

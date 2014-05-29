@@ -1,0 +1,12 @@
+-   name:   "City of Chattanooga Open Data Portal"
+    url:    http://data.chattlibrary.org
+-   name:   "National Day of Civic Hacking Datasets"
+    url:    http://hackforchange.org/data/
+-   name:   "State of Tennessee Open Data"
+    url:    http://www.tn.gov/opengov/
+-   name:   "Tennessee Department of Transportation GIS Data"
+    url:    http://www.tdot.state.tn.us/longrange/gis.htm
+-   name:   "TN Department of Education Report Card"
+    url:    http://edu.reportcard.state.tn.us/pls/apex/f?p=200:1:782475581521289
+-   name:   "US Census Data"
+    url:    http://www.census.gov/developers/
