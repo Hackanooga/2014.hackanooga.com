@@ -116,12 +116,26 @@
             td {
                 border-color: #dcdbdb;
             }
+            .table-striped>tbody>tr.past>th,
+            .table-striped>tbody>tr.past>td {
+                color: #aaa;
+            }
+            .table-striped>tbody>tr.now>th,
+            .table-striped>tbody>tr.now>td {
+                color: #fff;
+                background-color: #1373b6;
+            }
             #start th {
                 font-weight: bold;
             }
             #demos {
                 font-weight: bold;
                 color: #d12026;
+            }
+            #demos.now th,
+            #demos.now td {
+                color: #fff;
+                background-color: #d12026;
             }
             td[colspan] {
                 font-style: italic;
@@ -175,11 +189,11 @@
                 </div>
             </div>
         </nav>
-        <div class="container-fluid">
+        <main id="main" class="container-fluid">
 
           {{ content }}
 
-        </div>
+        </main>
 
         <footer id="ft">
             <span><a href="https://twitter.com/intent/tweet?hashtags=hackanooga,hackforchange">#hackanooga | #hackforchange</a></span>
@@ -189,5 +203,53 @@
         <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
         <script src="//platform.twitter.com/widgets.js" async></script>
+        <script>
+            (function($) {
+                "use strict";
+                if(window.navigator.standalone) {
+                    var
+                    win     =   $(window);
+                    $(document).on('click', 'a[href^="/"]', function(e) {
+                        e.preventDefault();
+                        $.get($(this).attr('href')).done(function(html) {
+                            document.documentElement.innerHTML = html;
+                        });
+                    });
+                }
+                var
+                scheduleTimeout;
+                function updateSchedule() {
+                    var
+                    times   =   $('#main time'),
+                    now     =   new Date(),
+                    i       =   times.length;
+
+                    while(i--) {
+                        var
+                        time        =   $(times[i]),
+                        start       =   new Date(time.data('start')),
+                        end         =   new Date(time.data('end'));
+                        if(start.toString().toLowerCase() === 'invalid date' || end.toString().toLowerCase() === 'invalid date') {
+                            continue;
+                        }
+                        if((start - now) < 0) {
+                            if((end - now) < 0) {
+                                time.closest('tr').addClass('past').removeClass('now');
+                            } else {
+                                time.closest('tr').addClass('now');
+                            }
+                        } else {
+                            time.closest('tr').removeClass('now');
+                        }
+                    }
+                    scheduleTimeout = setTimeout(updateSchedule, (60 - now.getSeconds()) * 1000);
+                }
+                updateSchedule();
+                $(document).ajaxComplete(function() {
+                    clearTimeout(scheduleTimeout);
+                    updateSchedule();
+                });
+            })(jQuery);
+        </script>
     </body>
 </html>
