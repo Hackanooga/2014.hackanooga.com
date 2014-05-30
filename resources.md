@@ -35,9 +35,10 @@ Usernames are:
 * RHEL: ec2-user
 * SuSE: root
 * Amazon Linux: ec2-user
-* Windows: ec2-user
 
 On *nix systems, you can gain root access once you've logged in by running `sudo su`.
+
+On Windows systems, you'll receive an RDP connection file and login via email.
 
 ## Databases
 
