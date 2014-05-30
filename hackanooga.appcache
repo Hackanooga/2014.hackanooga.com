@@ -1,0 +1,19 @@
+CACHE MANIFEST
+# Version 20140530
+
+CACHE:
+/
+/mark@2x.png
+/ndoch.png
+http://fonts.googleapis.com/css?family=Abel
+http://themes.googleusercontent.com/static/fonts/abel/v4/3YEwT2a1878zysq92S8_9w.eot
+http://themes.googleusercontent.com/static/fonts/abel/v4/wnJbeWILdr-ZMJJAMsiXsvesZW2xOQ-xsNqO47m55DA.woff
+http://themes.googleusercontent.com/static/fonts/abel/v4/EAqh528fFdbUek8UOky4sA.woff
+http://themes.googleusercontent.com/static/fonts/abel/v4/wnJbeWILdr-ZMJJAMsiXsvesZW2xOQ-xsNqO47m55DA.woff
+http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css
+http://code.jquery.com/jquery-2.1.1.min.js
+http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js
+http://platform.twitter.com/widgets.js
+
+SETTINGS:
+prefer-online
