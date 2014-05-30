@@ -1,8 +1,13 @@
+---
+layout: none
+---
 CACHE MANIFEST
-# Version 20140530
+# Version {{ site.time | date_to_xmlschema }}
 
 CACHE:
 /
+/resources/
+/datasets/
 /mark@2x.png
 /ndoch.png
 http://fonts.googleapis.com/css?family=Abel
