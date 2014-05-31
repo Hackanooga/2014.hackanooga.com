@@ -218,7 +218,6 @@
         <div id="status-bar"></div>
         <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="//netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js"></script>
-        <script src="//platform.twitter.com/widgets.js" async></script>
         <script>
             (function($) {
                 "use strict";
@@ -231,6 +230,13 @@
                             document.documentElement.innerHTML = html;
                         });
                     });
+                } else {
+                    var
+                    html    =   document.html || document.getElementsByTagName('html')[0],
+                    script  =   document.createElement('script');
+                    script.async = true;
+                    script.src = '//platform.twitter.com/widgets.js';
+                    html.appendChild(script);
                 }
                 var
                 scheduleTimeout;
